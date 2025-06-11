@@ -13,5 +13,12 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+
+        stage('Cleanup') {
+            steps {
+                echo 'Cleaning up workspace...'
+                deleteDir() // Deletes all files in the current workspace
+            }
+        }
     }
 }
